@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List App</title>
+    <link rel="stylesheet" href="lib/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header">
+            <h1>ToDo List App</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <form action="" id="taskForm">
+                <label for="taskField">Add a task</label>
+                <input type="text" id="taskField" placeholder="New Task">
+                <input id="addButton" type="button" value="Add">
+                <input id="resetButton" type="button" value="Reset">
+            </form>
+            
+            <ul id="taskList" data-role="listview" data-inset="true">
+            </ul>
+            
+        </div>
+        <div data-role="footer" data-position="fixed" class="footer-control">
+            <h1>DIC3 &copy; 2025 </h1>
+        </div>
+    </div>
+</body>
+</html>
