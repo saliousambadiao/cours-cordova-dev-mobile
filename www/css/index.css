@@ -1,0 +1,141 @@
+/* Styles généraux */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+}
+
+label {
+    text-align: center;
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+/* En-têtes et sections */
+[data-role="header"] h1 {
+    color: #ffffff;
+    text-shadow: none;
+    font-weight: 500;
+}
+
+[data-role="header"]:first-of-type {
+    background-color: #3498db;
+}
+
+/* En-tête des tâches actives */
+#activeTaskList + [data-role="header"] {
+    background-color: #2ecc71;
+    border-color: #27ae60;
+    margin-top: 20px;
+}
+
+/* En-tête des tâches terminées */
+#finishedTaskList + [data-role="header"], 
+[data-role="header"]:nth-of-type(3) {
+    background-color: #9b59b6;
+    border-color: #8e44ad;
+    margin-top: 20px;
+}
+
+/* Styles des listes */
+#activeTaskList, #finishedTaskList {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Éléments de la liste active */
+#activeTaskList li {
+    background: linear-gradient(to right, #e0f7fa, #b2ebf2);
+    border-color: #80deea;
+    color: #006064;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 15px;
+}
+
+#activeTaskList li:before {
+    content: "○";
+    margin-right: 10px;
+    color: #00838f;
+}
+
+/* Éléments de la liste terminée */
+#finishedTaskList li {
+    background: linear-gradient(to right, #e8f5e9, #c8e6c9);
+    border-color: #a5d6a7;
+    color: #1b5e20;
+    font-style: italic;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 15px;
+}
+
+#finishedTaskList li:before {
+    content: "✓";
+    margin-right: 10px;
+    color: #2e7d32;
+}
+
+/* Effet au survol pour les deux listes */
+#activeTaskList li:hover, #finishedTaskList li:hover {
+    transform: translateX(3px);
+    box-shadow: -2px 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Styles des boutons */
+#addButton {
+    background-color: #2ecc71;
+    border-color: #27ae60;
+    color: white;
+    text-shadow: none;
+    font-weight: bold;
+}
+
+#resetButton {
+    background-color: #e74c3c;
+    border-color: #c0392b;
+    color: white;
+    text-shadow: none;
+    font-weight: bold;
+}
+
+/* Champ de texte */
+#taskField {
+    border-color: #bdc3c7;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset;
+    transition: all 0.3s ease;
+}
+
+#taskField:focus {
+    border-color: #3498db;
+    box-shadow: 0 1px 3px rgba(52, 152, 219, 0.3) inset;
+}
+
+/* Animation lors de l'ajout de tâche */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#activeTaskList li, #finishedTaskList li {
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Pied de page */
+[data-role="footer"] {
+    background-color: #34495e;
+}
+
+[data-role="footer"] h1 {
+    color: #3498db;
+    font-size: 0.9em;
+    text-shadow: none;
+}
+
+/* Gestion du footer avec le clavier */
+.keyboard-visible .footer-control {
+    position: relative !important;
+    bottom: auto !important;
+}
