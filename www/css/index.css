@@ -1,0 +1,115 @@
+/* Styles généraux */
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+label, #resultBox {
+    text-align: center;
+}
+
+/* Style des formulaires */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+input, label {
+    display: block;
+    width: 85%;
+    margin: 10px auto;
+    font-size: 16px; /* Empêche le zoom automatique sur mobile */
+}
+
+input {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+}
+
+input[type="button"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+input[type="button"]:hover {
+    background-color: #45a049;
+}
+
+/* Style du résultat */
+#resultBox {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 50px;
+}
+
+/* Styles pour les différentes catégories d'IMC */
+#resultBox.severe-underweight {
+    background-color: #FF6347; /* Rouge-orangé */
+    color: white;
+    border-left: 5px solid #B22222; /* Bordure rouge foncé */
+}
+
+#resultBox.underweight {
+    background-color: #FFA07A; /* Saumon clair */
+    color: #333;
+    border-left: 5px solid #FF6347; /* Bordure rouge-orangé */
+}
+
+#resultBox.normal-weight {
+    background-color: #90EE90; /* Vert clair */
+    color: #333;
+    border-left: 5px solid #2E8B57; /* Bordure vert foncé */
+}
+
+#resultBox.overweight {
+    background-color: #FFD700; /* Jaune doré */
+    color: #333;
+    border-left: 5px solid #DAA520; /* Bordure jaune foncé */
+}
+
+#resultBox.moderate-obesity {
+    background-color: #FFA500; /* Orange */
+    color: white;
+    border-left: 5px solid #FF8C00; /* Bordure orange foncé */
+}
+
+#resultBox.severe-obesity {
+    background-color: #FF4500; /* Rouge-orangé foncé */
+    color: white;
+    border-left: 5px solid #8B0000; /* Bordure rouge foncé */
+}
+
+#resultBox.morbid-obesity {
+    background-color: #B22222; /* Rouge foncé */
+    color: white;
+    border-left: 5px solid #800000; /* Bordure rouge très foncé */
+}
+
+/* Style d'erreur */
+#resultBox.error {
+    background-color: #ffcccc;
+    color: #cc0000;
+    border-left: 5px solid #cc0000;
+    font-weight: bold;
+}

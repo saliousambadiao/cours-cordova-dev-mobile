@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover, user-scalable=no, maximum-scale=1">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/index.css">
+        <title>IMC Calculator</title>
+    </head>
+    <body>
+        <h1>IMC Calculator</h1>
+        <form action="">
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight">
+            <label for="height">Height (m):</label>
+            <input type="number" id="height">
+            <input type="button" id="calculateBtn" value="Calculate"></input>
+        </form>
+        <div id="resultBox">
+        </div>
+    </body>
+    <script src="js/index.js"></script>
+</html>
