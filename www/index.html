@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContacTel</title>
+    <link rel="stylesheet" href="lib/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/jquery.mobile-1.4.5.min.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+    <!-- 
+        Home Page
+    -->
+    <div id="homePage" data-role="page">
+        <div data-role="header">
+            <h1>ContacTel</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <a data-role="button" href="#addContactPage" data-icon="plus" data-iconpos="right">Add contact</a>
+            <listview id="contactList" data-role="listview" data-filter="true" data-filter-placeholder="Search contact">
+            </listview>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h1>DIC3 &copy; 2025</h1>
+        </div>
+    </div>
+
+    <!-- 
+        Contact Details Page
+    -->
+    <div id="contactDetailsPage" data-role="page">
+        <div data-role="header">
+            <a href="#homePage" data-icon="back" data-iconpos="notext">Retour</a>
+            <h1>ContacTel</h1>
+            <a id="deleteContactBtn" href="#" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-notext ui-icon-delete">Supprimer</a>
+            <a id="editContactBtn" href="#editContactPage" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-notext ui-icon-edit" style="margin-right: 45px;">Modifier</a>
+        </div>
+        <div role="main" class="ui-content">
+            <div class="contact-details">
+                <div class="contact-header">
+                    <img id="contactDetailPhoto" src="img/person1.avif" alt="Photo de contact" class="contact-photo">
+                    <h2 id="contactDetailName">Nom du contact</h2>
+                </div>
+                
+                <ul data-role="listview" data-inset="true">
+                    <li>
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a"><strong>Téléphone:</strong></div>
+                            <div class="ui-block-b"><span id="contactDetailPhone">Numéro de téléphone</span></div>
+                        </div>
+                    </li>
+                    <li id="contactDetailEmailContainer">
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a"><strong>Email:</strong></div>
+                            <div class="ui-block-b"><span id="contactDetailEmail">Adresse email</span></div>
+                        </div>
+                    </li>
+                    <li id="contactDetailAddressContainer">
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a"><strong>Adresse:</strong></div>
+                            <div class="ui-block-b"><span id="contactDetailAddress">Adresse postale</span></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h1>DIC3 &copy; 2025</h1>
+        </div>
+    </div>
+
+    <!-- 
+        Add Contact Page
+    -->
+    <div id="addContactPage" data-role="page">
+        <div data-role="header">
+            <a data-role="button" href="#homePage" data-icon="back" data-iconpos="notext"></a>
+            <h1>Ajouter un contact</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <form id="addContactForm">
+                <div class="ui-field-contain">
+                    <label for="newContactFirstName">Prénom:</label>
+                    <input type="text" name="firstName" id="newContactFirstName" placeholder="Prénom" required>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="newContactLastName">Nom:</label>
+                    <input type="text" name="lastName" id="newContactLastName" placeholder="Nom" required>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="newContactPhone">Téléphone:</label>
+                    <input type="tel" name="phone" id="newContactPhone" placeholder="Numéro de téléphone" required>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="newContactEmail">Email:</label>
+                    <input type="email" name="email" id="newContactEmail" placeholder="Adresse email">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="newContactAddress">Adresse:</label>
+                    <textarea name="address" id="newContactAddress" placeholder="Adresse postale"></textarea>
+                </div>
+                <button type="submit" class="ui-btn ui-corner-all ui-btn-icon-right ui-icon-check">Enregistrer</button>
+            </form>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h1>DIC3 &copy; 2025</h1>
+        </div>
+    </div>
+
+    <!-- 
+        Edit Contact Page
+    -->
+    <div id="editContactPage" data-role="page">
+        <div data-role="header">
+            <a data-role="button" href="#contactDetailsPage" data-icon="back" data-iconpos="notext"></a>
+            <h1>Modifier le contact</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <form id="editContactForm">
+                <input type="hidden" id="editContactId" name="contactId">
+                <div class="ui-field-contain">
+                    <label for="editContactFirstName">Prénom:</label>
+                    <input type="text" name="firstName" id="editContactFirstName" placeholder="Prénom" required>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="editContactLastName">Nom:</label>
+                    <input type="text" name="lastName" id="editContactLastName" placeholder="Nom" required>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="editContactPhone">Téléphone:</label>
+                    <input type="tel" name="phone" id="editContactPhone" placeholder="Numéro de téléphone" required>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="editContactEmail">Email:</label>
+                    <input type="email" name="email" id="editContactEmail" placeholder="Adresse email">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="editContactAddress">Adresse:</label>
+                    <textarea name="address" id="editContactAddress" placeholder="Adresse postale"></textarea>
+                </div>
+                <button type="submit" class="ui-btn ui-corner-all ui-btn-icon-right ui-icon-check">Enregistrer</button>
+            </form>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h1>DIC3 &copy; 2025</h1>
+        </div>
+    </div>
+</body>  
+</html>

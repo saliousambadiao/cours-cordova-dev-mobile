@@ -8,4 +8,10 @@
     <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+    
+    <platform name="ios">
+        <edit-config file="*-Info.plist" mode="merge" target="NSContactsUsageDescription">
+            <string>Cette application nécessite l'accès à vos contacts pour vous permettre de les gérer et les afficher.</string>
+        </edit-config>
+    </platform>
 </widget>

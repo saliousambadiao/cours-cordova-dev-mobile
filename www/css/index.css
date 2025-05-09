@@ -1,0 +1,106 @@
+/* Styles pour la page de détails du contact */
+
+/* Styles généraux */
+.ui-content {
+    padding: 15px;
+}
+
+/* Personnalisation des couleurs */
+
+/* 1. Header et footer - couleur #357ab7 */
+[data-role="header"], [data-role="footer"] {
+    background-color: #357ab7 !important;
+    color: white !important;
+    border-color: #2e6da4 !important;
+}
+
+[data-role="header"] h1, [data-role="footer"] h1 {
+    color: white !important;
+}
+
+/* 2. Bouton d'ajout de contact - couleur #22780f */
+#homePage a[href="#addContactPage"] {
+    background-color: #22780f !important;
+    border-color: #1b5e0c !important;
+    color: white !important;
+    text-shadow: none !important;
+}
+
+/* 3. Boutons Enregistrer dans les pages d'ajout et d'édition - couleur #22780f */
+#addContactForm button[type="submit"],
+#editContactForm button[type="submit"] {
+    background-color: #22780f !important;
+    border-color: #1b5e0c !important;
+    color: white !important;
+    text-shadow: none !important;
+}
+
+/* En-tête du contact avec photo et nom */
+.contact-header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+/* Style pour la photo du contact */
+#contactDetailPhoto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 10px;
+    display: block;
+    border: 2px solid #ddd;
+}
+
+/* Style pour le nom du contact */
+#contactDetailName {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #333;
+    text-align: center;
+}
+
+/* Style pour les boutons d'action */
+.contact-actions {
+    text-align: center;
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-actions .ui-btn {
+    margin: 0;
+}
+
+/* Style pour la liste des détails */
+.contact-details ul {
+    margin-top: 20px;
+}
+
+.contact-details .ui-grid-a {
+    display: flex;
+    align-items: center;
+}
+
+.contact-details .ui-block-a {
+    width: 30%;
+    font-weight: bold;
+    color: #666;
+}
+
+.contact-details .ui-block-b {
+    width: 70%;
+    color: #333;
+}
+
+/* Style pour les éléments de la liste */
+.contact-details li {
+    padding: 12px !important;
+    border-bottom: 1px solid #eee !important;
+}
+
+.contact-details li:last-child {
+    border-bottom: none !important;
+}
